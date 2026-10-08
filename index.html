@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> DECISION-O-MATIC 3000 </title>
+  <style>
+    body {
+      background-color: #ff007f;
+      color: #ffff00;
+      font-family: "Comic Sans MS", "Chalkboard SE", sans-serif;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #000;
+      border: 5px dashed #00ffff;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 25px;
+      box-shadow: 10px 10px 0px #000;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      text-shadow: 3px 3px #ff0000;
+    }
+
+    #decision-box {
+      font-size: 1.3rem;
+      background: #111;
+      color: #00ff00;
+      padding: 20px;
+      border: 2px solid #fff;
+      margin: 20px 0;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #ffff00;
+      color: #000;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: 4px solid #000;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px #fff;
+      margin: 5px;
+    }
+
+    button:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #fff;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <marquee scrollamount="10" style="background: #000; color: #00ffff; font-weight: bold; padding: 5px;">
+    DECISION-O-MATIC 3000  LET THE INTERNET MAKE YOUR LIFE CHOICES  100% UNQUESTIONABLE LOGIC 
+  </marquee>
+
+  <div class="container">
+    <h1> DECISION-O-MATIC </h1>
+    <p>Stuck in life? Click a button below to solve all your problems instantly.</p>
+
+    <div id="decision-box">Choose your category below!</div>
+
+    <button onclick="makeDecision('food')"> What should I eat?</button>
+    <button onclick="makeDecision('life')"> What should I do right now?</button>
+    <button onclick="makeDecision('excuse')"> Give me a quick excuse</button>
+  </div>
+
+  <div class="footer">
+    <p> Visitor <b>#0042069</b> </p>
+    <p>© 2026 Tacky Decision Web Corp</p>
+  </div>
+
+  <script>
+    const foodChoices = [
+      "Order pizza and eat it standing in front of the open fridge.",
+      "Cereal out of a coffee mug.",
+      "Reheat yesterday's leftovers and pretend it's fine dinning.",
+      "Air fry whatever is currently frozen at the bottom of the freezer.",
+      "Snack on shredded cheese straight from the bag."
+    ];
+
+    const lifeChoices = [
+      "Open 15 tabs about learning a new skill, then take a nap.",
+      "Clean one single tiny section of your room and call it productivity.",
+      "Stare at your phone screen for 20 minutes trying to remember why you unlocked it.",
+      "Reorganize your desktop icons by color.",
+      "Walk into the kitchen, open the pantry, look around, and leave."
+    ];
+
+    const excuseChoices = [
+      "Sorry, my WiFi accidentally connected to a passing satellite.",
+      "My cat was lying on my legs so moving was legally prohibited.",
+      "I was stuck in a 45-minute loop trying to pick a YouTube video while my food got cold.",
+      "My phone battery was at 1% and I had to conserve energy."
+    ];
+
+    function makeDecision(category) {
+      let list = [];
+      if (category === 'food') list = foodChoices;
+      if (category === 'life') list = lifeChoices;
+      if (category === 'excuse') list = excuseChoices;
+
+      const randomChoice = list[Math.floor(Math.random() * list.length)];
+      document.getElementById("decision-box").innerText = randomChoice;
+    }
+  </script>
+
+</body>
+</html>
